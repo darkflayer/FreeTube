@@ -182,7 +182,6 @@ function parseInvidiousData() {
 
   channelName = props.data.author
   channelId = props.data.authorId
-  // playlistId is now computed, do not assign
   videoCount = props.data.videoCount
 
   if (props.data.proxyThumbnail === false) {
@@ -197,7 +196,6 @@ function parseLocalData() {
 
   channelName = props.data.channelName
   channelId = props.data.channelId
-  // playlistId is now computed, do not assign
   videoCount = props.data.videoCount
 }
 
@@ -214,7 +212,6 @@ function parseUserData() {
 
   channelName = ''
   channelId = ''
-  // playlistId is now computed, do not assign
   videoCount = props.data.videos.length
 }
 
@@ -222,7 +219,6 @@ function parseUserData() {
 const quickBookmarkPlaylistId = computed(() => store.getters.getQuickBookmarkTargetPlaylistId)
 
 const markedAsQuickBookmarkTarget = computed(() => {
-  // Only user playlists can be target
   return playlistId.value != null &&
     quickBookmarkPlaylistId.value != null &&
     quickBookmarkPlaylistId.value === playlistId.value
